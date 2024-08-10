@@ -1,0 +1,14 @@
+
+version: '3.1'
+
+services:
+
+  backend:
+    image: cg-schools-api
+    container_name: schools-service
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8001'
+
