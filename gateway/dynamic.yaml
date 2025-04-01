@@ -1,0 +1,21 @@
+http:
+  routers:
+  # Declaring routes
+    schools-api-router:
+      entryPoints:
+        - websecure
+      rule: "Host(`api.ildevert.com`)"
+      service: schools-api-service
+      tls: {}
+
+  # Declaring services
+  services:
+    schools-api-service:
+      loadBalancer:
+        servers:
+          - url: http://schools-service:8001/
+
+tls:
+  certificates:
+    - certFile: /certs/cert.pem
+      keyFile: /certs/cert-key.pem
