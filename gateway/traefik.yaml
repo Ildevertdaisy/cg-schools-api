@@ -22,12 +22,12 @@ entryPoints:
   websecure:
     address: ":443"
 certificatesResolvers:
+  letsencrypt-staging:
     acme:
-    email: "ildevertdaisy@gmail.com"
-    storage: "acme-staging.json"
-    # CA server to use.
-    caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
-    tlsChallenge: {}
-    
+      email: "ildevertdaisy@gmail.com"
+      storage: "acme-staging.json"
+      # CA server to use.
+      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+      tlsChallenge: {}
   # minioweb:
   #   address: ":7777"
